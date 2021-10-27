@@ -1,0 +1,128 @@
+{% extends 'main/main.html'%}
+{% load static %}
+{% block title %} Search Results {% endblock title %}
+{% block content %}
+
+    <nav class="navbar navbar-expand navbar-dark bg-custom mt-2 static-top">
+        <div class="container">
+            <div class=" col-sm-2  p-2 text-center align-items-center bg-custom border-0">
+                <img class="img-profile " src="{% static 'main/google_icon.png' %}" style="max-width:150px;">
+            </div>
+            <div class=" col-md-5 col-sm-4 text-center bg-custom border-0 ">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group col-md-12 col-sm-12 p-2 search-div row">
+                        <input name="search_query" type="text" class="col-md-10 col-sm-10 p-1 bg-custom border-0 text-white" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Google Search">
+                        <button type="submit" class="btn btn-sm btn-search rounded-circle" >Search </button>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-4 col-sm-6 text-center bg-custom border-0 mr-2">
+                <ul class="navbar-nav ml-auto">
+                    <!-- Nav Item - User Information -->
+                    <li class="nav-item">
+                        <a class="nav-link " href="#" >
+                            Gmail
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#" >
+                            Images
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#" >
+                            <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn border-primary " href="#" >
+                            Sign In
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+    <hr style="border-color: #959697;">
+    <div class="container w-75 mr-auto">
+       <div>
+            <p>Search Results </p>
+       </div>
+       <hr style="border-color: #959697;">
+       <div class="p-2 col-lg-8">
+           {% for result in search_results %}
+           <div class="font-small">
+                <p> <h6> {{ result.1}} </h6></p>
+               <p> <h5><a href="{{ result.1}} "> {{ result.0}}  </a> </h5></p>
+               <p> {{ result.2}} </p>
+           </div>
+           <hr>
+           {% endfor %}
+       </div>
+    </div>
+<!-- Footer -->
+    <footer class="page-footer font-small " style="background: #171717; color: rgba(255,255,255,.54);">
+    <!-- Footer Elements -->
+    <div class="container">
+        Zimbabwe
+    </div>
+    <hr style="border-color: #212327;">
+    <div class="container" >
+        <div class="row d-flex align-items-center">
+            <div class="col-md-7 col-lg-8">
+              <ul class="list-unstyled list-inline text-center mr-auto">
+            <li class="list-inline-item">
+              <a href="#">
+               About
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                Advertising
+              </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">
+                  Business
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  How Search Works
+                </a>
+              </li>
+            </ul>
+            </div>
+
+            <div class="col-md-5 col-lg-4">
+               <ul class="list-unstyled list-inline text-center ml-auto">
+                <li class="list-inline-item">
+                  <a href="#">
+                    Privacy
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    Terms
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                      Settings
+                    </a>
+                  </li>
+            </ul>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
+{% endblock content %}

@@ -1,0 +1,139 @@
+{% extends 'main/main.html'%}
+{% load static %}
+{% block title %} Home {% endblock title %}
+{% block content %}
+
+    <nav class="navbar navbar-expand navbar-dark bg-custom mb-4 static-top shadow">
+
+        <!-- Sidebar Toggle (Topbar) -->
+        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+        </button>
+        <ul class="navbar-nav ml-auto">
+            <!-- Nav Item - User Information -->
+            <li class="nav-item">
+                <a class="nav-link " href="#" >
+                    Gmail
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#" >
+                    Images
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#" >
+                    <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn border-primary " href="#" >
+                    Sign In
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+    <div class="container">
+        <div>
+           <div class="row justify-content-center mt-lg-5">
+                <div class="card col-md-5 col-sm-12 offset-md-1 p-2 text-center align-items-center bg-custom border-0">
+                    <img class="img-profile " src="{% static 'main/google_icon.png' %}" style="max-width:250px;">
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="card col-md-6 col-sm-12 offset-md-1 p-1 text-center bg-custom border-0 ">
+                    <form method="post" action="{% url 'search_results' %}">
+                        {% csrf_token %}
+                        <div class="form-group col-md-12 col-sm-12 p-1 search-div">
+                            <input name="search_query" type="text" class="col-md-11 col-sm-11 p-2 search-input bg-custom border-0 text-white"  placeholder="Google Search">
+                        </div>
+                        <div class="form-group col-md-12 col-sm-12 text-white">
+                            <button type="submit" class="btn btn-search" > Google Search </button>
+                            <button type="submit" class="btn btn-search" > I'm Feeling Lucky </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <ul class="list-unstyled list-inline text-center text-sm ">
+                    <li class="list-inline-item">
+                      <p class="google-offered-in">
+                       Google Offered In :
+                      </p>
+                    </li>
+                    <li class="list-inline-item">
+                      <a href="#">
+                        Chishona
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                          Izulu
+                        </a>
+                      </li>
+                    </ul>
+                    </div>
+            </div>
+        </div>
+    </div>
+<footer class="page-footer font-small special-color-dark pt-4 fixed-bottom" style="background: #171717; color: rgba(255,255,255,.54);">
+    <!-- Footer Elements -->
+    <div class="container">
+        Zimbabwe
+    </div>
+    <hr style="border-color: #212327;">
+    <div class="container" >
+        <div class="row d-flex align-items-center">
+            <div class="col-md-7 col-lg-8">
+              <ul class="list-unstyled list-inline text-center mr-auto">
+            <li class="list-inline-item">
+              <a href="#">
+               About
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                Advertising
+              </a>
+            </li>
+            <li class="list-inline-item">
+                <a href="#">
+                  Business
+                </a>
+              </li>
+              <li class="list-inline-item">
+                <a href="#">
+                  How Search Works
+                </a>
+              </li>
+            </ul>
+            </div>
+
+            <div class="col-md-5 col-lg-4">
+               <ul class="list-unstyled list-inline text-center ml-auto">
+                <li class="list-inline-item">
+                  <a href="#">
+                    Privacy
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">
+                    Terms
+                  </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="#">
+                      Settings
+                    </a>
+                  </li>
+            </ul>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+{% endblock content %}

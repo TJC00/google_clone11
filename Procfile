@@ -1,0 +1,1 @@
+web: gunicon google_clone.wsgi:appication --log-file -

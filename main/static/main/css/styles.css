@@ -1,0 +1,33 @@
+.bg-custom{
+    background: #202124 !important;
+}
+.google-offered-in{
+    color: #bdc1c6 !important;
+}
+body{
+    color: #bdc1c6 !important;
+}
+
+.search-div{
+    border: 0.5px !important;
+    border-color: #bdc1c6 !important;
+    border-style: solid !important;
+    border-radius: 60px;
+}
+.search-div:hover{
+    background-color: #343435 !important;
+}
+.search-input:hover{
+    background-color: #343435 !important;
+}
+.search-input:focus{
+    outline: none !important;
+    border: none !important
+}
+.btn-search{
+    background-color: #303134;
+    color: #e8eaed;
+}
+.hr-border{
+    border-color: #212327 !important;
+}
